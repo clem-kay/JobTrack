@@ -1,175 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Profile</title>
-    <!-- Add Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Styling -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 600px;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #4e73df;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-        .form-label {
-            font-weight: 600;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .form-control {
-            border-radius: 25px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-            border-color: #d1d3e2;
-            transition: border-color 0.3s ease;
-        }
-        .form-control:focus {
-            border-color: #4e73df;
-            box-shadow: 0 0 5px rgba(78, 115, 223, 0.7);
-        }
-        .btn-primary {
-            background-color: #4e73df;
-            border-color: #4e73df;
-            border-radius: 25px;
-            padding: 12px 30px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #2e59d9;
-            border-color: #2e59d9;
-        }
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
-            border-radius: 25px;
-            padding: 12px 30px;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: #5a6268;
-            border-color: #545b62;
-        }
-        .mb-3 input, .mb-3 select {
-            padding: 15px;
-            font-size: 16px;
-        }
-        .row .col-md-6 {
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center">Add New Profile</h1>
-        <form method="post">
-            <!-- First row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="student_id" class="form-label">Student ID</label>
-                    <input type="text" name="student_id" id="student_id" class="form-control" placeholder="Student ID" required>
+<form method="POST" action="/add">
+    <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Add Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="specialization" class="form-label">Specialization</label>
-                    <select name="specialization" id="specialization" class="form-control">
-                        <option value="Welding / Fabrication">Welding / Fabrication</option>
-                        <option value="Auto repairs">Auto repairs</option>
-                        <option value="General Electrical">General Electrical</option>
-                        <option value="Metal Machining">Metal Machining</option>
-                        <option value="Fashion">Fashion</option>
-                    </select>
-                </div>
-            </div>
-            <!-- Second row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="tsc_attended" class="form-label">TSC Attended</label>
-                    <input type="text" name="tsc_attended" id="tsc_attended" class="form-control" placeholder="TSC Attended">
-                </div>
-                <div class="col-md-6">
-                    <label for="completion_year" class="form-label">Completion Year</label>
-                    <input type="number" name="completion_year" id="completion_year" class="form-control" placeholder="Completion Year">
-                </div>
-            </div>
-            <!-- Third row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="digital_address" class="form-label">Digital Address</label>
-                    <input type="text" name="digital_address" id="digital_address" class="form-control" placeholder="Digital Address">
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-                </div>
-            </div>
-            <!-- Fourth row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="telephone" class="form-label">Telephone</label>
-                    <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telephone">
-                </div>
-                <div class="col-md-6">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" name="city" id="city" class="form-control" placeholder="City">
-                </div>
-            </div>
-            <!-- Fifth row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="region" class="form-label">Region</label>
-                    <input type="text" name="region" id="region" class="form-control" placeholder="Region">
-                </div>
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Country</label>
-                    <input type="text" name="country" id="country" class="form-control" placeholder="Country">
-                </div>
-            </div>
-            <!-- Sixth row with two fields -->
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="current_job_title" class="form-label">Current Job Title</label>
-                    <input type="text" name="current_job_title" id="current_job_title" class="form-control" placeholder="Current Job Title">
-                </div>
-                <div class="col-md-6">
-                    <label for="current_employer" class="form-label">Current Employer</label>
-                    <input type="text" name="current_employer" id="current_employer" class="form-control" placeholder="Current Employer">
-                </div>
-            </div>
-            <!-- Seventh row with one field -->
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="industry_or_sector" class="form-label">Industry or Sector</label>
-                    <input type="text" name="industry_or_sector" id="industry_or_sector" class="form-control" placeholder="Industry or Sector">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mt-4">Add Profile</button>
-        </form>
-        <!-- Back Button -->
-        <a href="/" class="btn btn-secondary w-100 mt-3">Back to Profile List</a>
+    <div>
+        <label for="student_id">Student ID</label>
+        <input type="text" class="form-control" id="student_id" name="student_id" required>
     </div>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
 
-    <!-- Add Bootstrap JS (optional for interactive components) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </div>
+    <div>
+        <label for="specialization">Specialization</label>
+        <input type="text" class="form-control" name="specialization">
+    </div>
+    <div>
+        <label for="tsc_attended">TSC Attended</label>
+        <input type="text" class="form-control" name="tsc_attended">
+    </div>
+    <div>
+        <label for="completion_year">Completion Year</label>
+        <input type="number" class="form-control" name="completion_year">
+    </div>
+    <div>
+        <label for="digital_address">Digital Address</label>
+        <input type="text" class="form-control" name="digital_address">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" required>
+    </div>
+    <div>
+        <label for="telephone">Telephone</label>
+        <input type="text" class="form-control" name="telephone">
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input type="text" class="form-control" name="city">
+    </div>
+    <div>
+        <label for="region">Region</label>
+        <input type="text" class="form-control" name="region">
+    </div>
+    <div>
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="country">
+    </div>
+    <div>
+        <label for="current_job_title">Current Job Title</label>
+        <input type="text" class="form-control" name="current_job_title">
+    </div>
+    <div>
+        <label for="current_employer">Current Employer</label>
+        <input type="text" class="form-control" name="current_employer">
+    </div>
+    <div>
+        <label for="industry_or_sector">Industry/Sector</label>
+        <input type="text" class="form-control" name="industry_or_sector">
+    </div>
+    <div>
+        <button type="submit">Add Student</button>
+    </div>
+</form>

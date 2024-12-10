@@ -1,0 +1,73 @@
+<div class="modal fade" id="editModal{{ student.id }}" tabindex="-1" aria-labelledby="editModalLabel{{ student.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/edit/{{ student.id }}" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel{{ student.id }}">Edit Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="student_id" class="form-label">Student ID</label>
+                        <input type="text" class="form-control" name="student_id" value="{{ student.student_id }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" name="name" value="{{ student.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="specialization" class="form-label">Specialization</label>
+                        <input type="text" class="form-control" name="specialization" value="{{ student.specialization }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tsc_attended" class="form-label">TSC Attended</label>
+                        <input type="text" class="form-control" name="tsc_attended" value="{{ student.tsc_attended }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="completion_year" class="form-label">Completion Year</label>
+                        <input type="number" class="form-control" name="completion_year" value="{{ student.completion_year }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="digital_address" class="form-label">Digital Address</label>
+                        <input type="text" class="form-control" name="digital_address" value="{{ student.digital_address }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" value="{{ student.email }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telephone" class="form-label">Telephone</label>
+                        <input type="text" class="form-control" name="telephone" value="{{ student.telephone }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" name="city" value="{{ student.city }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="region" class="form-label">Region</label>
+                        <input type="text" class="form-control" name="region" value="{{ student.region }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" name="country" value="{{ student.country }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="current_employer" class="form-label">Current Employer</label>
+                        <input type="text" class="form-control" name="current_employer" value="{{ student.current_employer }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="industry_or_sector" class="form-label">Industry/Sector</label>
+                        <input type="text" class="form-control" name="industry_or_sector" value="{{ student.industry_or_sector }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="current_job_title" class="form-label">Current Job Title</label>
+                        <input type="text" class="form-control" name="current_job_title" value="{{ student.current_job_title }}">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
